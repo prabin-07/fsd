@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            background: linear-gradient(135deg, #e0f2fe, #f5f3ff);
+            color: #1f2937;
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            width: min(100%, 380px);
+            padding: 36px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            box-shadow: 0 16px 40px rgb(31 41 55 / 12%);
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: 1.75rem;
+        }
+
+        label {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font: inherit;
+        }
+
+        input:focus {
+            outline: 3px solid rgb(59 130 246 / 20%);
+            border-color: #3b82f6;
+        }
+
+        button {
+            margin-top: 16px;
+            padding: 12px;
+            border: 0;
+            border-radius: 8px;
+            background: #2563eb;
+            color: #fff;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <form action="/home" method="post">
+        <h1>Welcome back</h1>
+        <label for="username">Username</label>
+        <input id="username" type="text" name="u_name" placeholder="Enter username" autocomplete="username">
+        <label for="password">Password</label>
+        <input id="password" type="password" name="pass" placeholder="Enter password" autocomplete="current-password">
+        <button type="submit" name="submit">Login</button>
+    </form>
+</body>
+</html>

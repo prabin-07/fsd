@@ -1,21 +1,11 @@
 const express = require('express')
 const app = express()
 
-app.use(express.urlencoded({extended:true}))
 app.set("view engine","hbs")
+const productRouter = require("./routes/product")
+app.use(express.urlencoded({extended:true}))
 app.use(express.static('public'))
-
-app.get("/", (req,res) => {
-    res.render('home')
-})
-
-app.post("/add", (req,res)=>{
-    const { pName,pPrice, pCat } =  req.body;
-    const data = [{
-        pName,pPrice,pCat
-    }]
-    res.render("display", {data});
-})
+app.use("/product",productRouter);
 
 app.listen(3000, () => {
     console.log("listening. http://localhost:3000")
