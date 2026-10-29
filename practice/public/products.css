@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 3rem 1.5rem;
+    background: #f4f7fb;
+    color: #172033;
+    font-family: Arial, sans-serif;
+}
+
+.header,
+.container {
+    width: min(100%, 1100px);
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0 0 0.5rem;
+    color: #173b70;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.header p {
+    margin: 0;
+    color: #65738b;
+}
+
+.container h2 {
+    margin: 0 0 1.25rem;
+    font-size: 1.5rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+}
+
+.product-card {
+    display: flex;
+    min-height: 210px;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.25rem;
+    border: 1px solid #e1e8f1;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgb(23 59 112 / 7%);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgb(23 59 112 / 12%);
+}
+
+.product-icon {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    place-items: center;
+    border-radius: 12px;
+    background: #eaf1ff;
+    font-size: 1.6rem;
+}
+
+.product-details {
+    display: flex;
+    min-width: 0;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.product-details h3 {
+    margin: 0 0 0.5rem;
+    overflow-wrap: anywhere;
+    font-size: 1.1rem;
+}
+
+.category {
+    margin: 0 0 0.75rem;
+    color: #65738b;
+    font-size: 0.9rem;
+}
+
+.price {
+    margin: auto 0 1rem;
+    color: #173b70;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.view-btn {
+    padding: 0.65rem 0.9rem;
+    border: 0;
+    border-radius: 7px;
+    background: #2563eb;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+}
+
+.view-btn:hover {
+    background: #1d4ed8;
+}
+
+.empty-message {
+    grid-column: 1 / -1;
+    padding: 2rem;
+    border: 1px dashed #b9c7da;
+    border-radius: 12px;
+    color: #65738b;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 2rem 1rem;
+    }
+}

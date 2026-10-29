@@ -5,7 +5,7 @@ app.use(express.urlencoded({extended:true}))
 app.set("view engine","hbs")
 app.use(express.static('public'))
 
-app.get("/", (req,res) => {
+app.get("/login", (req,res) => {
     res.render('data')
 })
 

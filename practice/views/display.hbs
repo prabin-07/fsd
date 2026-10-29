@@ -6,10 +6,10 @@
     <title>Products</title>
 </head>
 <body>
-    {{#each data}}
-    <p> Product Name : {{pName}} </p>
-    <p> Product Price : {{pPrice}} </p>
-    <p> Product Category : {{pCat}}  </p>
-    {{/each}}
+    {{!-- {{#each data}} --}}
+    <p> Product Name : {{data.product_name}} </p>
+    <p> Product Price : {{data.product_price}} </p>
+    <p> Product Category : {{data.product_category}} </p>
+    {{!-- {{/each}} --}}
 </body>
 </html>
