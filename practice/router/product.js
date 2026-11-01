@@ -5,10 +5,6 @@ router.get("/", (req,res) => {
     res.render('home')
 })
 
-router.get("/display", async(req,res) => {
-    const value = await Product.find()
-    res.render('products',{Product:value})
-})
 
 router.post("/add", async (req,res)=>{
     const { pName,pPrice, pCat } =  req.body;
@@ -18,6 +14,11 @@ router.post("/add", async (req,res)=>{
         product_category : pCat
     })
     res.render("display",{data})
+})
+
+router.get("/display", async(req,res) => {
+    const value = await Product.find()
+    res.render('products',{value})
 })
 
 module.exports=router;

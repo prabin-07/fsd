@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#141414">
+    <title>Add a Movie | Netflix</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="add-page">
+    <header class="site-header">
+        <a class="wordmark" href="/" aria-label="Netflix home">NETFLIX</a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="/">Home</a>
+            <a href="/#films">Films</a>
+        </nav>
+        <a class="header-action" href="/">Back to home <span aria-hidden="true">→</span></a>
+    </header>
+    <main class="form-layout">
+        <div class="form-intro">
+            <p class="section-kicker">GROW YOUR COLLECTION</p>
+            <h1>Add a movie</h1>
+            <p>Bring another great story to your Netflix shelf. Add the details below to save it to your collection.</p>
+            <div class="form-art" aria-hidden="true"><span>N</span></div>
+        </div>
+        <section class="form-card" aria-labelledby="form-title">
+            <h2 id="form-title">Movie details</h2>
+            <p class="form-note">Fields marked with <span>*</span> are required.</p>
+            <form action="/addMovies" method="post">
+                <div class="field-group">
+                    <label for="title">Movie title <span>*</span></label>
+                    <input id="title" name="title" type="text" placeholder="e.g. The Grand Budapest Hotel" required maxlength="150" autocomplete="off">
+                </div>
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="genre">Genre</label>
+                        <input id="genre" name="genre" type="text" placeholder="e.g. Drama" maxlength="80">
+                    </div>
+                    <div class="field-group">
+                        <label for="year">Release year</label>
+                        <input id="year" name="year" type="number" placeholder="e.g. 2024" min="1888" max="2100" inputmode="numeric">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" rows="4" placeholder="What makes this movie worth watching?" maxlength="1000"></textarea>
+                </div>
+                <div class="field-group">
+                    <label for="posterUrl">Poster image URL</label>
+                    <input id="posterUrl" name="posterUrl" type="url" placeholder="https://example.com/poster.jpg" inputmode="url">
+                    <small>Use a direct link to the movie poster image.</small>
+                </div>
+                <div class="form-actions">
+                    <a class="button button-outline" href="/">Cancel</a>
+                    <button class="button button-red" type="submit">Add movie</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer class="site-footer"><span class="wordmark footer-mark">NETFLIX</span><span>Your movie night, your way.</span></footer>
+</body>
+</html>

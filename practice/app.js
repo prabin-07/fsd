@@ -15,5 +15,5 @@ mongoose.connect("mongodb://localhost:27017/Ecommerce").then(()=>
     console.log("error occured"));
 
 app.listen(3000, () => {
-    console.log("listening. http://localhost:3000")
+    console.log("listening. http://localhost:3000/product")
 })

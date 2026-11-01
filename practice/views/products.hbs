@@ -1,13 +1,12 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Store</title>
-    <link rel="stylesheet" href="/products.css">
+    <link rel="stylesheet" href="/products.css" />
 </head>
-<body>
 
+<body>
     <header class="header">
         <h1>Product Store</h1>
         <p>Explore our collection</p>
@@ -17,31 +16,28 @@
         <h2>Our Products</h2>
 
         <div class="product-grid">
-            {{#each products}}
-                <div class="product-card">
-                    <div class="product-icon">📦</div>
+            {{#each value}}
+            <div class="product-card">
+                <div class="product-icon">📦</div>
 
-                    <div class="product-details">
-                        <h3>{{product_name}}</h3>
+                <div class="product-details">
+                    <h3>{{product_name}}</h3>
 
-                        <p class="category">
-                            {{product_category}}
-                        </p>
+                    <p class="category">
+                        {{product_category}}
+                    </p>
 
-                        <p class="price">
-                            ₹{{product_price}}
-                        </p>
+                    <p class="price">
+                        ₹{{product_price}}
+                    </p>
 
-                        <button class="view-btn" type="button">
-                            View Product
-                        </button>
-                    </div>
+                    <button class="view-btn" type="button">
+                        View Product
+                    </button>
                 </div>
-            {{else}}
-                <p class="empty-message">No products available.</p>
+            </div>
             {{/each}}
         </div>
     </main>
-
 </body>
 </html>
