@@ -1,43 +1,37 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product Store</title>
-    <link rel="stylesheet" href="/products.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/products.css">
+    <title>Collection | Forma</title>
 </head>
-
-<body>
-    <header class="header">
-        <h1>Product Store</h1>
-        <p>Explore our collection</p>
+<body class="catalog-page">
+    <header class="site-header">
+        <a class="brand" href="/product/display"><span class="brand-mark">F</span> forma<span class="brand-period">.</span></a>
+        <a class="header-link" href="/product">＋ <span>Add a product</span></a>
     </header>
-
-    <main class="container">
-        <h2>Our Products</h2>
-
+    <main class="catalog-main">
+        <section class="catalog-heading">
+            <div><p class="eyebrow">A LITTLE BIT OF EVERYTHING</p><h1>The collection<span>.</span></h1></div>
+            <p class="catalog-description">Useful things, lovely things, things you didn't know you needed. Find your next favorite.</p>
+        </section>
+        <div class="collection-bar"><span>CURATED FINDS</span><span>{{value.length}} ITEMS</span></div>
         <div class="product-grid">
             {{#each value}}
-            <div class="product-card">
-                <div class="product-icon">📦</div>
-
-                <div class="product-details">
-                    <h3>{{product_name}}</h3>
-
-                    <p class="category">
-                        {{product_category}}
-                    </p>
-
-                    <p class="price">
-                        ₹{{product_price}}
-                    </p>
-
-                    <button class="view-btn" type="button">
-                        View Product
-                    </button>
+            <article class="product-card">
+                <a class="product-art" href="/product/{{_id}}" aria-label="View {{product_name}}"><span class="art-index">{{@index}}</span><span class="art-glyph" aria-hidden="true">✳</span><span class="art-category">{{product_category}}</span></a>
+                <div class="product-info">
+                    <div><p class="product-category">{{product_category}}</p><h2>{{product_name}}</h2></div>
+                    <span class="product-price">₹{{product_price}}</span>
                 </div>
-            </div>
+                <a class="product-link" href="/product/{{_id}}">Take a closer look <span aria-hidden="true">↗</span></a>
+            </article>
+            {{else}}
+            <section class="empty-state"><span class="empty-mark">✳</span><h2>Nothing on the shelves yet.</h2><p>Add the first find to start the collection.</p><a href="/product">Add a product <span aria-hidden="true">→</span></a></section>
             {{/each}}
         </div>
     </main>
+    <footer class="site-footer"><span>FORMA / A place for good finds</span><span>Made for the things you love.</span></footer>
 </body>
 </html>

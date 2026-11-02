@@ -3,13 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+    <link rel="stylesheet" href="/display.css">
+    <title>Product details | Forma</title>
 </head>
-<body>
-    {{!-- {{#each data}} --}}
-    <p> Product Name : {{data.product_name}} </p>
-    <p> Product Price : {{data.product_price}} </p>
-    <p> Product Category : {{data.product_category}} </p>
-    {{!-- {{/each}} --}}
+<body class="detail-page">
+    <header class="site-header">
+        <a class="brand" href="/product/display"><span class="brand-mark">F</span> forma<span class="brand-period">.</span></a>
+        <a class="header-link" href="/product/display">Back to collection <span aria-hidden="true">↗</span></a>
+    </header>
+    <main class="detail-main">
+        <a class="back-link" href="/product/display">← &nbsp; THE COLLECTION</a>
+        {{#if data1}}
+        <article class="detail-layout">
+            <div class="detail-art"><span class="detail-art-kicker">A FORMA FIND</span><span class="detail-art-glyph" aria-hidden="true">✳</span><span class="detail-art-caption">GOOD THINGS, WELL FOUND.</span></div>
+            <section class="detail-copy"><p class="eyebrow">{{data1.product_category}}</p><h1>{{data1.product_name}}</h1><p class="detail-description">A thoughtful find, selected for everyday living. Simple, useful, and ready to make itself at home.</p><div class="detail-price-row"><span>YOUR NEXT FAVORITE</span><strong>₹{{data1.product_price}}</strong></div><a class="detail-cta" href="/product/display">Keep exploring <span aria-hidden="true">→</span></a></section>
+        </article>
+        {{else}}
+        <article class="detail-layout">
+            <div class="detail-art"><span class="detail-art-kicker">A FORMA FIND</span><span class="detail-art-glyph" aria-hidden="true">✳</span><span class="detail-art-caption">GOOD THINGS, WELL FOUND.</span></div>
+            <section class="detail-copy"><p class="eyebrow">{{data.product_category}}</p><h1>{{data.product_name}}</h1><p class="detail-description">A thoughtful find, selected for everyday living. Simple, useful, and ready to make itself at home.</p><div class="detail-price-row"><span>JUST ADDED</span><strong>₹{{data.product_price}}</strong></div><a class="detail-cta" href="/product/display">Keep exploring <span aria-hidden="true">→</span></a></section>
+        </article>
+        {{/if}}
+    </main>
+    <footer class="site-footer"><span>FORMA / A place for good finds</span><span>Made for the things you love.</span></footer>
 </body>
 </html>

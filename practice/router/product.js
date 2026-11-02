@@ -21,4 +21,9 @@ router.get("/display", async(req,res) => {
     res.render('products',{value})
 })
 
+router.get('/:id', async(req,res)=> {
+    const data1 = await Product.findById(req.params.id)
+    res.render('display',{data1})
+})
+
 module.exports=router;

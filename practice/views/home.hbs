@@ -4,19 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-
-    <title>Product</title>
+    <title>Add a product | Forma</title>
 </head>
-<body>
-    <h1>Add Product</h1>
-    <form action="/product/add" method="post">
-    <label for="pName">Product name</label>
-    <input id="pName" type="text" name="pName" placeholder="Enter product name">
-    <label for="pPrice">Price</label>
-    <input id="pPrice" type="text" name="pPrice" placeholder="Enter price">
-    <label for="pCat">Category</label>
-    <input id="pCat" type="text" name="pCat" placeholder="Enter category">
-    <button type="submit" name="submit">Submit</button>
-    </form>
+<body class="form-page">
+    <header class="site-header">
+        <a class="brand" href="/product/display"><span class="brand-mark">F</span> forma<span class="brand-period">.</span></a>
+        <a class="header-link" href="/product/display">Explore the collection <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main class="form-layout">
+        <section class="form-intro">
+            <p class="eyebrow">THE FORMA MARKETPLACE</p>
+            <h1>Good things<br>start <span>here.</span></h1>
+            <p class="intro-copy">Give your next great find a place in the collection. Add the details and let everyone take a look.</p>
+            <div class="intro-note"><span class="note-dot"></span> Thoughtfully picked. Ready to share.</div>
+        </section>
+
+        <section class="form-card" aria-labelledby="form-title">
+            <div class="form-card-heading">
+                <p class="eyebrow">NEW LISTING</p>
+                <h2 id="form-title">Add a product</h2>
+                <p>Fill in a few details to get started.</p>
+            </div>
+            <form action="/product/add" method="post">
+                <label for="pName">Product name</label>
+                <input id="pName" type="text" name="pName" placeholder="e.g. Everyday ceramic mug" required>
+
+                <label for="pPrice">Price <span class="label-hint">IN INR</span></label>
+                <div class="input-prefix"><span>₹</span><input id="pPrice" type="number" name="pPrice" placeholder="0.00" min="0" step="0.01" required></div>
+
+                <label for="pCat">Category</label>
+                <input id="pCat" type="text" name="pCat" placeholder="e.g. Home & living" required>
+
+                <button type="submit">Add to collection <span aria-hidden="true">→</span></button>
+            </form>
+            <p class="form-footnote">You can always update your listing later.</p>
+        </section>
+    </main>
+    <footer class="site-footer"><span>FORMA / A place for good finds</span><span>Made for the things you love.</span></footer>
 </body>
 </html>
