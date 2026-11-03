@@ -1,17 +1,23 @@
 const express=require('express')
 const router = express.Router()
 const Product =require("../models/productModel")
+const multer = require('multer')
+
+const files = multer({dest:"uploads/"})
+
 router.get("/", (req,res) => {
     res.render('home')
 })
 
 
-router.post("/add", async (req,res)=>{
-    const { pName,pPrice, pCat } =  req.body;
+router.post("/add", files.single('pImg') , async (req,res)=>{
+    const { pName,pPrice, pCat,pImg } =  req.body;
+    console.log(req.file)
     const data =await Product.create({
         product_name : pName,
         product_price : pPrice,
-        product_category : pCat
+        product_category : pCat,
+        product_image : pImg
     })
     res.render("display",{data})
 })

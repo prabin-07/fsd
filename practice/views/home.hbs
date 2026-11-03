@@ -26,7 +26,7 @@
                 <h2 id="form-title">Add a product</h2>
                 <p>Fill in a few details to get started.</p>
             </div>
-            <form action="/product/add" method="post">
+            <form action="/product/add" method="post" enctype="multipart/form-data">
                 <label for="pName">Product name</label>
                 <input id="pName" type="text" name="pName" placeholder="e.g. Everyday ceramic mug" required>
 
@@ -35,6 +35,9 @@
 
                 <label for="pCat">Category</label>
                 <input id="pCat" type="text" name="pCat" placeholder="e.g. Home & living" required>
+
+                <label for="pImg">Upload Project Image</label>
+                <input type="file" name="pImg">
 
                 <button type="submit">Add to collection <span aria-hidden="true">→</span></button>
             </form>
