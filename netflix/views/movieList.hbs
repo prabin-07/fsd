@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#141414">
+    <title>Movies | Netflix</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="../files/netflix.png" type="image/x-icon">
+</head>
+<body class="movie-list-page">
+    <header class="site-header">
+        <a class="wordmark" href="/" aria-label="Netflix home">NETFLIX</a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="/Movies">Home</a>
+            <a class="active" href="/Movies/movieList">Movies</a>
+        </nav>
+        <a class="header-action" href="/Movies/movieList">Browse</a>
+    </header>
+
+    <main class="movie-list-main">
+        <section class="movie-list-heading">
+            <p class="section-kicker">YOUR COLLECTION</p>
+            <h1>Movies</h1>
+            <p>Browse the titles in your collection.</p>
+        </section>
+
+        {{#if value}}
+        <section class="movie-grid" aria-label="Movie collection">
+            {{#each value}}
+            <article class="movie-card">
+                <div class="movie-poster">
+                    <span class="poster-n" aria-hidden="true">N</span>
+                    <span class="poster-label">{{this.movie_genre}}</span>
+                </div>
+                <div class="movie-info">
+                    <h2>{{this.movie_title}}</h2>
+                    <p>{{this.release_year}} <span aria-hidden="true">&bull;</span> {{this.movie_language}}</p>
+                    <p class="movie-rating">Rating: {{this.movie_rating}}</p>
+                    {{#if this.movie_description}}<p class="movie-description">{{this.movie_description}}</p>{{/if}}
+                    {{#if this.movie_cast}}<p class="movie-cast">Cast: {{this.movie_cast}}</p>{{/if}}
+                </div>
+            </article>
+            {{/each}}
+        </section>
+        {{else}}
+        <section class="empty-state">
+            <div class="empty-icon" aria-hidden="true">&#9654;</div>
+            <h2>No movies yet</h2>
+            <p>Add a movie to start building your collection.</p>
+            <a class="button button-red" href="/Movies/movieList">Browse movies</a>
+        </section>
+        {{/if}}
+    </main>
+
+    <footer class="site-footer"><span class="wordmark footer-mark">NETFLIX</span><span>Enjoy your next movie night.</span></footer>
+</body>
+</html>
