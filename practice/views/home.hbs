@@ -36,8 +36,13 @@
                 <label for="pCat">Category</label>
                 <input id="pCat" type="text" name="pCat" placeholder="e.g. Home & living" required>
 
-                <label for="pImg">Upload Project Image</label>
-                <input type="file" name="pImg">
+                <label for="pImg">Product image <span class="label-hint">OPTIONAL</span></label>
+                <label class="upload-field" for="pImg">
+                    <span class="upload-icon" aria-hidden="true">↑</span>
+                    <span class="upload-copy"><strong>Choose an image</strong><small>JPG, PNG or WEBP</small></span>
+                    <span class="upload-action">Browse</span>
+                </label>
+                <input class="file-input" id="pImg" type="file" name="pImg" accept="image/*">
 
                 <button type="submit">Add to collection <span aria-hidden="true">→</span></button>
             </form>

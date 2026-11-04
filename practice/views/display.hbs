@@ -15,12 +15,12 @@
         <a class="back-link" href="/product/display">← &nbsp; THE COLLECTION</a>
         {{#if data1}}
         <article class="detail-layout">
-            <div class="detail-art"><span class="detail-art-kicker">A FORMA FIND</span><span class="detail-art-glyph" aria-hidden="true">✳</span><span class="detail-art-caption">GOOD THINGS, WELL FOUND.</span></div>
+            <div class="detail-art"><img class="detail-image" src="{{#if data1}}{{data1.product_img}}{{else}}{{data.product_img}}{{/if}}" alt="{{#if data1}}{{data1.product_name}}{{else}}{{data.product_name}}{{/if}}"></div>
             <section class="detail-copy"><p class="eyebrow">{{data1.product_category}}</p><h1>{{data1.product_name}}</h1><p class="detail-description">A thoughtful find, selected for everyday living. Simple, useful, and ready to make itself at home.</p><div class="detail-price-row"><span>YOUR NEXT FAVORITE</span><strong>₹{{data1.product_price}}</strong></div><a class="detail-cta" href="/product/display">Keep exploring <span aria-hidden="true">→</span></a></section>
         </article>
         {{else}}
         <article class="detail-layout">
-            <div class="detail-art"><span class="detail-art-kicker">A FORMA FIND</span><span class="detail-art-glyph" aria-hidden="true">✳</span><span class="detail-art-caption">GOOD THINGS, WELL FOUND.</span></div>
+            <div class="detail-art"><img class="detail-image" src="{{#if data1}}{{data1.product_img}}{{else}}{{data.product_img}}{{/if}}" alt="{{#if data1}}{{data1.product_name}}{{else}}{{data.product_name}}{{/if}}"></div>
             <section class="detail-copy"><p class="eyebrow">{{data.product_category}}</p><h1>{{data.product_name}}</h1><p class="detail-description">A thoughtful find, selected for everyday living. Simple, useful, and ready to make itself at home.</p><div class="detail-price-row"><span>JUST ADDED</span><strong>₹{{data.product_price}}</strong></div><a class="detail-cta" href="/product/display">Keep exploring <span aria-hidden="true">→</span></a></section>
         </article>
         {{/if}}

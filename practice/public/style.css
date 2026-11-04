@@ -36,3 +36,13 @@ body { margin: 0; color: var(--ink); background: var(--paper); font-family: 'DM 
 .site-footer { width: min(100% - 64px, 1280px); min-height: 66px; margin: auto; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); color: #929487; font-size: .68rem; letter-spacing: .03em; }
 @media (max-width: 760px) { .site-header, .site-footer { width: calc(100% - 40px); } .form-layout { width: calc(100% - 40px); padding: 52px 0; grid-template-columns: 1fr; gap: 35px; } .form-intro h1 { font-size: clamp(3.4rem, 15vw, 5rem); } }
 @media (max-width: 440px) { .site-footer span:last-child { display: none; } .header-link { font-size: .78rem; } }
+
+/* Product image upload */
+.form-card .file-input { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%); }
+.form-card .upload-field { display: flex; min-height: 78px; margin-top: 0; padding: 12px 14px; align-items: center; gap: 12px; border: 1px dashed #c9d0c0; border-radius: 4px; background: #f8f9f4; cursor: pointer; transition: border-color .2s, background .2s; }
+.form-card .upload-field:hover, .form-card .file-input:focus + .upload-field { border-color: #7e9274; background: #f1f4ec; }
+.upload-icon { display: grid; width: 38px; height: 38px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: #e8ede2; color: var(--green); font-size: 1.2rem; }
+.upload-copy { display: grid; gap: 4px; }
+.upload-copy strong { color: var(--ink); font-size: .78rem; }
+.upload-copy small { color: var(--muted); font-size: .68rem; font-weight: 400; }
+.upload-action { margin-left: auto; padding: 8px 11px; border: 1px solid var(--line); border-radius: 3px; background: white; color: var(--green); font-size: .7rem; font-weight: 600; }

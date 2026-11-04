@@ -20,8 +20,9 @@
         <div class="product-grid">
             {{#each value}}
             <article class="product-card">
-                    {{!-- <div><p class="product-image"><img src="/uploads/88e09dd8ceee7a28b4dcc7dfd6dffc49" alt="err">{{product_image}}</p></div> --}}
-                <a class="product-art" href="/product/{{_id}}" aria-label="View {{product_name}}"><span class="art-index">{{@index}}</span><span class="art-glyph" aria-hidden="true">✳</span><span class="art-category">{{product_category}}</span></a>
+                    <div class="product-image">
+                        <img src="{{product_img}}" alt="{{product_name}}">
+                    </div>
                 <div class="product-info">
                     <div><p class="product-category">{{product_category}}</p><h2>{{product_name}}</h2></div>
                     <span class="product-price">₹{{product_price}}</span>

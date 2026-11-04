@@ -29,3 +29,7 @@ body { min-height: 100vh; margin: 0; display: flex; flex-direction: column; colo
 .site-footer { width: min(100% - 64px, 1280px); min-height: 66px; margin: auto; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); color: #929487; font-size: .68rem; letter-spacing: .03em; }
 @media (max-width: 720px) { .site-header, .site-footer, .detail-main { width: calc(100% - 40px); } .detail-layout { grid-template-columns: 1fr; } .detail-art { min-height: 320px; } .detail-copy { padding: 35px 28px; } }
 @media (max-width: 440px) { .site-footer span:last-child { display: none; } .detail-art { min-height: 260px; } }
+
+.detail-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.detail-art::before, .detail-art::after { display: none; }
+.detail-image { z-index: 1; }
