@@ -40,4 +40,14 @@ router.get('/:id', async(req,res)=> {
     res.render('display',{data1})
 })
 
+router.post('/delete/:id', async(req,res)=>{
+    try{
+        await Product.findByIdAndDelete(req.params.id)
+        res.redirect('/product/display')
+    }catch(err){
+        console.log(err);
+        res.redirect('/home')
+    }
+})
+
 module.exports=router;
