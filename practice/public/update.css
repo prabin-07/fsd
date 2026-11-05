@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    padding: 32px 20px;
+    color: #252b25;
+    background: #f7f6f0;
+    font-family: 'DM Sans', Arial, sans-serif;
+}
+
+form {
+    width: min(100%, 480px);
+    display: grid;
+    gap: 10px;
+    padding: clamp(24px, 6vw, 42px);
+    border: 1px solid #e6e4da;
+    border-radius: 5px;
+    background: #fffefa;
+    box-shadow: 0 16px 50px rgb(44 53 38 / 7%);
+}
+
+label { margin-top: 8px; color: #252b25; font-size: .8rem; font-weight: 600; }
+
+input:not([type="file"]) {
+    width: 100%;
+    height: 48px;
+    padding: 0 14px;
+    border: 1px solid #e4e4da;
+    border-radius: 3px;
+    outline: none;
+    background: #fff;
+    color: #252b25;
+    font: inherit;
+    font-size: .88rem;
+}
+
+input:focus { border-color: #7e9274; box-shadow: 0 0 0 3px rgb(126 146 116 / 13%); }
+.label-hint { color: #a0a294; font-size: .63rem; letter-spacing: .08em; }
+.input-prefix { position: relative; }
+.input-prefix > span { position: absolute; top: 14px; left: 14px; color: #818576; }
+.input-prefix input { padding-left: 32px !important; }
+
+.upload-field {
+    display: flex;
+    min-height: 78px;
+    margin-top: 0;
+    padding: 12px 14px;
+    align-items: center;
+    gap: 12px;
+    border: 1px dashed #c9d0c0;
+    border-radius: 4px;
+    background: #f8f9f4;
+    cursor: pointer;
+}
+
+.upload-icon { display: grid; width: 38px; height: 38px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: #e8ede2; color: #40583f; font-size: 1.2rem; }
+.upload-copy { display: grid; gap: 4px; }
+.upload-copy strong { font-size: .78rem; }
+.upload-copy small { color: #74796c; font-size: .68rem; font-weight: 400; }
+.upload-action { margin-left: auto; padding: 8px 11px; border: 1px solid #e6e4da; border-radius: 3px; background: #fff; color: #40583f; font-size: .7rem; font-weight: 600; }
+.file-input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+
+button {
+    display: flex;
+    min-height: 50px;
+    margin-top: 16px;
+    padding: 0 17px;
+    align-items: center;
+    justify-content: space-between;
+    border: 0;
+    border-radius: 3px;
+    background: #40583f;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-size: .87rem;
+    font-weight: 600;
+    transition: background .2s, transform .2s;
+}
+
+button:hover { transform: translateY(-1px); background: #30452f; }
+button:focus-visible { outline: 2px solid #40583f; outline-offset: 3px; }

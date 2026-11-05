@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update form</title>
+    <link rel="stylesheet" href="/update.css">
+</head>
+<body>
+    <form action="/product/add" method="post" enctype="multipart/form-data">
+                <label for="pName">Product name</label>
+                <input id="pName" type="text" name="pName" placeholder="e.g. Everyday ceramic mug" value="{{value.product_name}}">
+
+                <label for="pPrice">Price <span class="label-hint">IN INR</span></label>
+                <div class="input-prefix"><span>₹</span><input id="pPrice" type="number" name="pPrice" placeholder="0.00" min="0" step="0.01" value=""></div>
+
+                <label for="pCat">Category</label>
+                <input id="pCat" type="text" name="pCat" placeholder="e.g. Home & living" >
+
+                <label for="pImg">Product image <span class="label-hint">OPTIONAL</span></label>
+                <label class="upload-field" for="pImg">
+                    <span class="upload-icon" aria-hidden="true">↑</span>
+                    <span class="upload-copy"><strong>Choose an image</strong><small>JPG, PNG or WEBP</small></span>
+                    <span class="upload-action">Browse</span>
+                </label>
+                <input class="file-input" id="pImg" type="file" name="pImg" accept="image/*">
+
+                <button type="submit">Add to collection <span aria-hidden="true">→</span></button>
+            </form>
+</body>
+</html>

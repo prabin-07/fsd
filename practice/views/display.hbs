@@ -20,6 +20,7 @@
             <form action="/product/delete/{{data1.id}}" method="post">
             <button class="delete-button" type="submit">Delete</button>
             </form>
+            <a class="update-button" href="/product/update/{{data1.id}}">Update</a>
         </article>
         {{else}}
         <article class="detail-layout">
@@ -28,6 +29,7 @@
             <form action="/product/delete/{{data1.id}}" method="post">
             <button class="delete-button" type="submit">Delete</button>
             </form>
+            <a class="update-button" href="/product/update/{{data1.id}}">Update</a>
         </article>
         {{/if}}
     </main>

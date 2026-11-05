@@ -2,6 +2,7 @@ const express=require('express')
 const router = express.Router()
 const Product =require("../models/productModel")
 const multer = require('multer')
+const productModel = require('../models/productModel')
 
 const storage=multer.diskStorage({
     destination:(req,file,cb)=>{
@@ -46,6 +47,34 @@ router.post('/delete/:id', async(req,res)=>{
         res.redirect('/product/display')
     }catch(err){
         console.log(err);
+        res.redirect('/home')
+    }
+})
+
+router.get('/update/:id', async (req,res) => {
+    try{
+        const data = await Product.findByIdAndUpdate(req.params.id);
+        res.render('update', {data});
+    }catch{
+        res.redirect('/home')
+    }
+})
+
+router.post('edit/:id', files.single('pImg'), async (req,res) => {
+    try{
+        const { pName,pPrice, pCat } =  req.body;
+        const data = {
+            product_name : pName,
+            product_price : pPrice,
+            product_category : pCat,
+            product_img : pImg
+        }
+        if(req.file){
+            data.product_img = `/uploads/${req.file.filename}`
+            const update = await Product.findByIdAndUpdate(req.params.id, data, {returndocument:'after'});
+            res.redirect('/product/display')
+        }
+    }catch{
         res.redirect('/home')
     }
 })
