@@ -25,15 +25,15 @@
                 <h2 id="account-title">Create an account</h2>
                 <p>A few details are all you need to get started.</p>
             </div>
-            <form action="/user/register" method="post">
+            <form action="/user/registerUser" method="post">
                 <label for="username">Username</label>
                 <input id="username" type="text" name="username" placeholder="Choose a username" autocomplete="username" required>
 
                 <label for="user-email">Email</label>
-                <input id="user-email" type="email" name="user_email" placeholder="Enter your email" autocomplete="email" required>
+                <input id="user-email" type="email" name="email" placeholder="Enter your email" autocomplete="email" required>
 
                 <label for="user-password">Password</label>
-                <input id="user-password" type="password" name="user_pass" placeholder="Create a password" autocomplete="new-password" required>
+                <input id="user-password" type="password" name="password" placeholder="Create a password" autocomplete="new-password" required>
 
                 <button type="submit">Create account <span aria-hidden="true">→</span></button>
             </form>
