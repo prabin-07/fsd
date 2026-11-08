@@ -60,14 +60,13 @@ router.get('/update/:id', async (req,res) => {
     }
 })
 
-router.post('edit/:id', files.single('pImg'), async (req,res) => {
+router.post('/update/:id', files.single('updateImg'), async (req,res) => {
     try{
         const { pName,pPrice, pCat } =  req.body;
         const data = {
             product_name : pName,
             product_price : pPrice,
             product_category : pCat,
-            product_img : pImg
         }
         if(req.file){
             data.product_img = `/uploads/${req.file.filename}`

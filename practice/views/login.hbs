@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/login.css">
+    <title>Log in | Forma</title>
+</head>
+<body class="account-page">
+    <header class="site-header">
+        <a class="brand" href="/product/display"><span class="brand-mark">F</span> forma<span class="brand-period">.</span></a>
+        <a class="header-link" href="/product/display">Explore the collection <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main class="account-main">
+        <section class="account-intro">
+            <p class="eyebrow">WELCOME BACK</p>
+            <h1>Good finds<br>await <span>you.</span></h1>
+            <p class="intro-copy">Sign in to continue your Forma experience and keep the things you love close.</p>
+        </section>
+
+        <section class="account-card" aria-labelledby="account-title">
+            <div class="card-heading">
+                <p class="eyebrow">YOUR ACCOUNT</p>
+                <h2 id="account-title">Log in</h2>
+                <p>Enter your details to pick up where you left off.</p>
+            </div>
+            <form action="/user/login" method="post">
+                <label for="username">Username</label>
+                <input id="username" type="text" name="username" placeholder="Enter username" autocomplete="username" required>
+
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password" placeholder="Enter password" autocomplete="current-password" required>
+
+                <button type="submit">Log in <span aria-hidden="true">→</span></button>
+            </form>
+            <p class="account-switch">New to Forma? <a href="/user/register">Create an account</a></p>
+        </section>
+    </main>
+
+    <footer class="site-footer"><span>FORMA / A place for good finds</span><span>Made for the things you love.</span></footer>
+</body>
+</html>

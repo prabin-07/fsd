@@ -1,0 +1,4 @@
+@import url('/account.css');
+
+.register-page .account-main { gap: clamp(40px, 8vw, 110px); }
+@media (min-width: 761px) { .register-page .account-card { padding: clamp(26px, 3.5vw, 38px); } }
